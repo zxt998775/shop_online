@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @author ycshang
  */
 @Component
-public class FieldMetaObject implements MetaObjectHandler {
+public class FieldMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {

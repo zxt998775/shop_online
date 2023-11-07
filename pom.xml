@@ -8,15 +8,14 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.soft2242.shop</groupId>
+    <groupId>com.example</groupId>
     <artifactId>shop_online</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>shop_online</name>
-    <description>ShopOnline project for Spring Boot</description>
+    <description>shop_online</description>
     <properties>
         <java.version>17</java.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -59,7 +58,7 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version>
+            <version>8.0.32</version>
         </dependency>
 
         <!-- mybatis-plus-->
