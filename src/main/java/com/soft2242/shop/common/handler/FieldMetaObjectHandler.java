@@ -1,6 +1,5 @@
 package com.soft2242.shop.common.handler;
 
-
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.soft2242.shop.common.constant.Constant;
 import org.apache.ibatis.reflection.MetaObject;
@@ -8,9 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-/**
- * @author ycshang
- */
 @Component
 public class FieldMetaObjectHandler implements MetaObjectHandler {
 

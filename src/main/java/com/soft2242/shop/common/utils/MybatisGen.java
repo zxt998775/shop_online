@@ -24,8 +24,8 @@ public class MybatisGen {
 
         Map<OutputFile, String> outputFileStringMap = new HashMap<>();
         outputFileStringMap.put(OutputFile.controller, path + "controller");
-        outputFileStringMap.put(OutputFile.service, path + "service");
-        outputFileStringMap.put(OutputFile.serviceImpl, path + "service/impl");
+        outputFileStringMap.put(OutputFile.service, path + "com/soft2242/shop/service");
+        outputFileStringMap.put(OutputFile.serviceImpl, path + "com/soft2242/shop/service/impl");
         outputFileStringMap.put(OutputFile.entity, path + "entity");
         outputFileStringMap.put(OutputFile.mapper, path + "mapper");
         outputFileStringMap.put(OutputFile.xml, pathXml);

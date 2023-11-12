@@ -1,9 +1,9 @@
 package com.soft2242.shop.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.soft2242.shop.entity.IndexRecommendTab;
 import com.soft2242.shop.mapper.IndexRecommendTabMapper;
 import com.soft2242.shop.service.IndexRecommendTabService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

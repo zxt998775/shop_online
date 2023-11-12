@@ -9,8 +9,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * <p>
@@ -22,6 +21,9 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@Data
+@ToString
+@NoArgsConstructor
 @TableName("t_goods")
 @ApiModel(value = "Goods对象", description = "")
 public class Goods {
@@ -94,4 +96,12 @@ public class Goods {
     @ApiModelProperty("更新时间")
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
+
+    public String getProductPictures() {
+        return productPictures;
+    }
+
+    public void setProductPictures(String productPictures) {
+        this.productPictures = productPictures;
+    }
 }
