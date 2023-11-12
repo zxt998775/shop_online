@@ -4,18 +4,36 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.soft2242.shop.entity.UserShippingAddress">
-        <id column="id" property="id" />
-        <result column="user_id" property="userId" />
-        <result column="receiver" property="receiver" />
-        <result column="contact" property="contact" />
-        <result column="province_code" property="provinceCode" />
-        <result column="city_code" property="cityCode" />
-        <result column="county_code" property="countyCode" />
-        <result column="address" property="address" />
-        <result column="is_default" property="isDefault" />
-        <result column="delete_flag" property="deleteFlag" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="receiver" property="receiver"/>
+        <result column="contact" property="contact"/>
+        <result column="province_code" property="provinceCode"/>
+        <result column="city_code" property="cityCode"/>
+        <result column="county_code" property="countyCode"/>
+        <result column="address" property="address"/>
+        <result column="is_default" property="isDefault"/>
+        <result column="delete_flag" property="deleteFlag"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
     </resultMap>
 
+    <!--
+         更新数据-->
+    <update id="updateAddressByIdInteger" parameterType="com.soft2242.shop.entity.UserShippingAddress" >
+        update t_user_shipping_address
+        set delete_flag =1
+        <!--        <set>-->
+        <!--            <if test="receiver != null">receiver = #{receiver},</if>-->
+        <!--            <if test="contact != null">contact = #{contact},</if>-->
+        <!--            <if test="provinceCode != null">province_code = #{provinceCode},</if>-->
+        <!--            <if test="cityCode != null">city_code = #{cityCode},</if>-->
+        <!--            <if test="countyCode != null">county_code = #{countyCode},</if>-->
+        <!--            <if test="address != null">address = #{address},</if>-->
+        <!--            <if test="isDefault != null">is_default = #{isDefault},</if>-->
+        <!--            <if test="deleteFlag != null">delete_flag = #{deleteFlag},</if>-->
+        <!--            <if test="updateTime != null">update_time = #{updateTime}</if>-->
+        <!--        </set>-->
+        where id = #{id}
+    </update>
 </mapper>

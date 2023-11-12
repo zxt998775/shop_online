@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface UserShippingAddressMapper extends BaseMapper<UserShippingAddress> {
 
+    Integer updateAddressByIdInteger(UserShippingAddress userShippingAddress);
+
 }

@@ -6,6 +6,8 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ObtainUserIdUtils {
 
     public static Integer getUserId(HttpServletRequest request) {
+        System.out.println("userId"+request.getAttribute("userId"));
+        System.out.println("address"+request.getAttribute("address"));
         if (request.getAttribute("userId") == null) {
             throw new ServerException("用户不存在");
         }

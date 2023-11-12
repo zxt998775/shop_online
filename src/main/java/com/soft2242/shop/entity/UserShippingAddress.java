@@ -9,8 +9,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * <p>
@@ -22,7 +24,9 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@ToString
 @TableName("t_user_shipping_address")
+@Builder
 @ApiModel(value = "UserShippingAddress对象", description = "")
 public class UserShippingAddress {
 
@@ -74,4 +78,14 @@ public class UserShippingAddress {
     @ApiModelProperty("更新时间")
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
+
+
+    @Override
+    public UserShippingAddress clone() {
+        try {
+            return (UserShippingAddress) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(); // 不可能抛出异常
+        }
+    }
 }
