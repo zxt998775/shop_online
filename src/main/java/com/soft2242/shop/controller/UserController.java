@@ -33,7 +33,7 @@ public class UserController {
     private final UserService userService;
 
     @Operation(summary = "微信登录")
-    @PostMapping("loginMin")
+    @PostMapping("/login/wxMin")
     public Result<LoginResultVO> wxLogin(@RequestBody @Validated UserLoginQuery query) {
         LoginResultVO userVO = userService.login(query);
         return Result.ok(userVO);
