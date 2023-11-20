@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
+import static com.soft2242.shop.common.utils.ObtainUserIdUtils.getUserId;
 import static com.soft2242.shop.constant.APIConstant.*;
 
 /**
@@ -92,6 +93,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
     @Override
     public UserVO editUserInfo(UserVO userVO) {
+
         User user = baseMapper.selectById(userVO.getId());
         if (user == null) {
             throw new ServerException("用户不存在");

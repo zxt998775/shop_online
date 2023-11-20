@@ -7,6 +7,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+import com.soft2242.shop.vo.SpecsVO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -53,6 +57,7 @@ public class GoodsSpecificationDetail {
     @ApiModelProperty("规格详情")
     @TableField("specs")
     private String specs;
+//    private List<SpecsVO> specs;
 
     @ApiModelProperty("逻辑删除(0-未删除，1-已删除)")
     @TableField("delete_flag")

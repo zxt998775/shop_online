@@ -42,15 +42,17 @@ public class UserShippingAddressController {
     }
 
     @Operation(summary = "收货地址列表")
-    @PostMapping("/list")
-    public Result<List<AddressVO>> getAddressList(@RequestBody AddressVO addressVO) {
-        List<AddressVO> addressList = userShippingAddressService.getAddressList(addressVO);
+    @GetMapping("/list")
+    public Result<List<AddressVO>> getAddressList(HttpServletRequest request) {
+        Integer userId = getUserId(request);
+        List<AddressVO> addressList = userShippingAddressService.getAddressList(AddressVO.builder().userId(userId).build());
         return Result.ok(addressList);
     }
 
     @Operation(summary = "修改收货地址")
-    @PutMapping("/updateAddress")
-    public Result<String> updateAddress(@RequestBody @Validated AddressVO addressVO) {
+    @PostMapping("/updateAddress")
+    public Result<String> updateAddress(@RequestBody @Validated AddressVO addressVO,@Parameter Integer id ) {
+//        addressVO.setId(id);
         Integer integer = userShippingAddressService.updateAddress(addressVO);
         if (integer > 0)
             return Result.ok("修改成功");
@@ -60,8 +62,8 @@ public class UserShippingAddressController {
     }
 
     @Operation(summary = "删除收货地址")
-    @PutMapping("/delAddress")
-    public Result<String> delAddress(@RequestParam(value = "addressId")Integer addressId) {
+    @PostMapping("/delAddress")
+    public Result<String> delAddress(@RequestParam(value = "id") Integer addressId) {
 
         Integer integer = userShippingAddressService.delAddress(addressId);
         if (integer > 0)
@@ -71,9 +73,8 @@ public class UserShippingAddressController {
     }
 
     @Operation(summary = "收货地址详情")
-    @PostMapping("/getAddressDetail")
-
-    public Result<AddressVO> getAddressDetail(@RequestParam(value = "addressId")Integer addressId, HttpServletRequest request) {
+    @GetMapping("/address/detail")
+    public Result<AddressVO> getAddressDetail(@RequestParam(value = "id") Integer addressId, HttpServletRequest request) {
         Integer userId = getUserId(request);
         AddressVO detail = userShippingAddressService.getAddressDetail(addressId);
         return Result.ok(detail);

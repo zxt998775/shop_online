@@ -29,9 +29,14 @@ public class GoodsVO {
     @Schema(description = "商品详情页主图")
     private List<String> mainPictures;
     @Schema(description = "商品属性列表")
-    private List<GoodsSpecification> specs;
+//    private List<GoodsSpecification> specs;
+//    用户商品模块json转集合类，影响的话建意该成 mybatis handle 自动转换
+    private List<GoodsSpecificationVO> specs;
     @Schema(description = "商品属性")
-    private List<GoodsSpecificationDetail> skus;
+//    private List<GoodsSpecificationDetail> skus;
+    //    用户商品模块json转集合类，影响的话建意该成 mybatis handle 自动转换
+
+    private List<GoodsSpecificationDetailVO> skus;
     @Schema(description = "商品详情")
     private List<String> productPictures;
     @Schema(description = "商品规格")

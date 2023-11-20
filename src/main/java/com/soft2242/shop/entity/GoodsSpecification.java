@@ -7,6 +7,9 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
+import java.util.List;
+
+import com.soft2242.shop.vo.GoodsValueVO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -41,6 +44,7 @@ public class GoodsSpecification {
     @ApiModelProperty("属性详情")
     @TableField("value")
     private String value;
+//    private List<GoodsValueVO> value;
 
     @ApiModelProperty("逻辑删除(0-未删除，1已删除)")
     @TableField("delete_flag")

@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,6 +29,7 @@ import static com.soft2242.shop.common.utils.ObtainUserIdUtils.getUserId;
 @RestController
 @RequestMapping("user")
 @AllArgsConstructor
+@Slf4j
 public class UserController {
 
     private final UserService userService;
@@ -49,8 +51,10 @@ public class UserController {
     @Operation(summary = "修改用户信息")
     @PutMapping("/profile")
     private Result<UserVO> editUserInfo(HttpServletRequest request, @RequestBody @Validated UserVO userVO) {
+        log.info(userVO.toString());
         Integer userId = getUserId(request);
         userVO.setId(userId);
+        System.out.println("打印userid"+userId);
         UserVO userInfo = userService.editUserInfo(userVO);
         return Result.ok(userInfo);
     }

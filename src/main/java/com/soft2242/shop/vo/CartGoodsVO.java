@@ -7,6 +7,10 @@ import lombok.Data;
 public class CartGoodsVO {
     @Schema(description = "主键id")
     private Integer id;
+    @Schema(description = "用户id")
+    private Integer userId;
+    @Schema(description = "商品goodsId")
+    private Integer goodsId;
     @Schema(description = "商品名称")
     private String name;
     @Schema(description = "属性")
